@@ -1,0 +1,273 @@
+\documentclass{report}
+\usepackage{anyfontsize}
+\usepackage{fontspec}
+\usepackage{raleway}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{geometry}
+	\geometry{bottom=0mm}
+\title{Documentation}
+\author{Harish Rajagopal}
+
+\definecolor{azure}{rgb}{0.0, 0.5, 1.0}
+\definecolor{azuremist}{rgb}{0.94, 1.0, 1.0}
+\setmainfont{Roboto Light}
+
+\begin{document}
+	
+    \begin{titlepage}
+    	\pagenumbering{gobble}
+    	\newgeometry{bottom=-3.5cm}
+    	
+    	\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{light_blue_background.jpg}};
+    	
+    	\hspace{-4.8cm}
+    	\setlength{\headsep}{0pt}
+    	\setlength{\voffset}{-1.5inch}
+    	\setlength{\headheight}{0pt}
+    	\setlength{\topmargin}{0pt}
+    	\setlength{\footskip}{0cm}
+    	\begin{tikzpicture}
+    		\useasboundingbox [fill=azure] (0cm,3.5cm) rectangle (22cm,10cm);
+    		\node[right] at (4.9cm,5.5cm) {\color{azuremist}\fontsize{50}{60}\raleway\selectfont Documentation};
+    	\end{tikzpicture}\\[+2cm]
+    	
+    	\begin{center}
+    		{\fontsize{22}{30}\selectfont Depression Therapy using Chatbot}\\[+3mm]
+    		{\fontsize{19}{25}\selectfont Programming Club - IIT Kanpur}\\[+2cm]
+    		{\fontsize{15}{20}\selectfont Harish Rajagopal\\[+2mm]
+    			160552}\\[+2mm]
+    		{\fontsize{15}{20}\selectfont Vishwas Lathi\\[+2mm]
+    			160808}\\[+2mm]
+    		{\fontsize{15}{20}\selectfont Harshit Sharma\\[+2mm]
+    			160283}\\[+7mm]
+    		{\fontsize{15}{20}\selectfont Mentor\\[+2mm]
+    			Varun Khare}\\[+1cm]
+    		{\fontsize{13}{18}\selectfont Acknowledgements: Mohammad Daud}\\[+3cm]
+    		\includegraphics*[scale=0.3]{iitklogo.png}
+    	\end{center}
+    	\restoregeometry
+    
+    \end{titlepage}
+    
+    \newpage
+    \pagenumbering{arabic}
+    \newgeometry{bottom=0pt}
+    
+    \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{light_blue_background.jpg}};
+    
+    \hspace{-4.8cm}
+    \setlength{\headsep}{0pt}
+    \setlength{\voffset}{-1.5inch}
+    \setlength{\headheight}{0pt}
+    \setlength{\topmargin}{0pt}
+    \begin{tikzpicture}
+    \useasboundingbox [fill=azure] (0cm,3.5cm) rectangle (22cm,10cm);
+    \node[right] at (3.2cm,5cm) {\color{azuremist}\fontsize{35}{40}\raleway\selectfont Features};
+    \end{tikzpicture}\\[+2cm]
+    
+        \setlength{\baselineskip}{+8mm}
+        
+        \hspace{-7mm}{\fontsize{20}{22}\selectfont Sentiment Analysis}\\[-9mm]
+        	
+        	\paragraph{}{\fontsize{15}{18}\selectfont Sentiment Analysis refers to the use of natural language processing, text analysis and  computational linguistics to study the subjective states of the text presented. Using datasets freely available online, we can train models and then use Sentiment Analysis to find out if the user’s response is positive, neutral or negative, and thus decide the virtual therapist’s responses.}\\[+9mm]
+        
+        \hspace{-7mm}{\fontsize{20}{22}\selectfont Cognitive Behavioural Therapy}\\[-9mm]
+        	\paragraph{}{\fontsize{15}{18}\selectfont Cognitive behavioral therapy (CBT) is a type of psychotherapy in which negative patterns of thought about the self and the world are challenged in order to alter unwanted behaviour patterns or treat mood disorders such as depression. Using transcripts of therapy sessions, we can build the virtual human so that it can provide effective counselling.}
+     
+     \newpage
+     
+     \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{light_blue_background.jpg}};
+     
+     \hspace{-4.8cm}
+     \setlength{\headsep}{0pt}
+     \setlength{\voffset}{-1.5inch}
+     \setlength{\headheight}{0pt}
+     \setlength{\topmargin}{0pt}
+     \begin{tikzpicture}
+     \useasboundingbox [fill=azure] (0cm,3.5cm) rectangle (22cm,10cm);
+     \node[right] at (3.2cm,5cm) {\color{azuremist}\fontsize{35}{40}\raleway\selectfont Model};
+     \end{tikzpicture}\\[+2cm]
+     
+     \setlength{\baselineskip}{+8mm}
+     
+     \hspace{-7mm}{\fontsize{20}{22}\selectfont Dataset}\\[-9mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont 1.6 million tweets from twitter, classified into positive (4) and negative (0), as the training data, of which 20\% is used as cross validation data. 494 tweets from twitter, classified into positive (4), neutral (2) and negative (0), as the test data. Labels adjusted to be in the range 0 to 1.}\\[-8mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont Hashtags, website links and user references removed, then input tweets preprocessed by Gensim, with preprocessed tweets of length less than two removed. Vocabulary of words initialised with Gensim Dictionary and words replaced with respective posiiton in the vocabulary plus one.}\\[-8mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont Preprocessed tweets of length less than 20 were zero-padded to length 20. Those of length greater than 20 were split into tweets of length 20 and the last split part zero-padded, if necessary. Zero-padding done for supplying variable length sequences to the LSTM layer.}\\[-8mm]
+     
+     \newpage
+     
+     \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{light_blue_background.jpg}};
+     
+     \hspace{-4.8cm}
+     \setlength{\headsep}{0pt}
+     \setlength{\voffset}{-1.5inch}
+     \setlength{\headheight}{0pt}
+     \setlength{\topmargin}{0pt}
+     \begin{tikzpicture}
+     \useasboundingbox [fill=azure] (0cm,3.5cm) rectangle (22cm,10cm);
+     \node[right] at (3.2cm,5cm) {\color{azuremist}\fontsize{35}{40}\raleway\selectfont Model};
+     \end{tikzpicture}\\[+2cm]
+     
+     \setlength{\baselineskip}{+8mm}
+     
+     \hspace{-7mm}{\fontsize{20}{22}\selectfont Neural Network Architecture}\\[-4mm]
+     \begin{enumerate}
+     	
+     	{\fontsize{15}{18}\selectfont \item Embedding layer with zero-masking to output word vectors of 32 dimensions for each word in the vocabulary, and a zero vector for zero-padded words.}\\[-6mm]
+     	
+     	{\fontsize{15}{18}\selectfont \item LSTM layer with 128 dimensional output.}\\[-6mm]
+     	
+     	{\fontsize{15}{18}\selectfont \item Fully connected output layer with 1 neuron and sigmoid activation function.}
+     	
+     \end{enumerate}
+     {\fontsize{15}{18}\selectfont Neural network uses binary cross-entropy loss function and the Adam optimizer with default parameters, but with Nesterov momentum.}\\[-3mm]
+     
+     \vspace{+9mm}\hspace{-7mm}{\fontsize{20}{22}\selectfont Results}\\[-9mm]
+     \paragraph{}{\fontsize{15}{18}\selectfont Current results show accuracy of 84.14\% on the training data, accuracy of 83.32\% on the cross validation data and accuracy of 60.17\% on the test data.}
+     
+     \newpage
+     
+     \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{light_blue_background.jpg}};
+     
+     \hspace{-4.8cm}
+     \setlength{\headsep}{0pt}
+     \setlength{\voffset}{-1.5inch}
+     \setlength{\headheight}{0pt}
+     \setlength{\topmargin}{0pt}
+     \begin{tikzpicture}
+     \useasboundingbox [fill=azure] (0cm,3.5cm) rectangle (22cm,10cm);
+     \node[right] at (3.2cm,5cm) {\color{azuremist}\fontsize{35}{40}\raleway\selectfont Week 1};
+     \end{tikzpicture}\\[+2cm]
+     
+     \setlength{\baselineskip}{+8mm}
+     
+     \hspace{-7mm}{\fontsize{20}{22}\selectfont Coursera - Intro to Machine Learning}\\[-9mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont Completed chapters from the course by Andrew Ng on Coursera from Stanford University, pertaining mostly to supervised learning, including Linear Regression, Polynomial Multivariate Regression, Logistic Regression, Neural Networks and Back-propagation, Support Vector Machines, etc.}\\[+9mm]
+     
+     \hspace{-7mm}{\fontsize{20}{22}\selectfont Udacity - Intro to Machine Learning}\\[-9mm]
+     \paragraph{}{\fontsize{15}{18}\selectfont Completed chapter on text learning from Introduction to Machine Learning course on Udacity, based on preprocessing of text by tokenisation of document, removal of stopwords, word stemming and term-frequency inverse-term-frequency (tf-idf) representation of documents using the python libraries scikit-learn and NLTK.}
+        
+     \newpage
+     
+     \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{light_blue_background.jpg}};
+     
+     \hspace{-4.8cm}
+     \setlength{\headsep}{0pt}
+     \setlength{\voffset}{-1.5inch}
+     \setlength{\headheight}{0pt}
+     \setlength{\topmargin}{0pt}
+     \begin{tikzpicture}
+     \useasboundingbox [fill=azure] (0cm,3.5cm) rectangle (22cm,10cm);
+     \node[right] at (3.2cm,5cm) {\color{azuremist}\fontsize{35}{40}\raleway\selectfont Week 2};
+     \end{tikzpicture}\\[+2cm]
+     
+     \setlength{\baselineskip}{+8mm}
+     
+     \hspace{-7mm}{\fontsize{20}{22}\selectfont Neural Networks and Deep Learning}\\[-9mm]
+     \paragraph{}{\fontsize{15}{18}\selectfont Completed chapters of the online ebook \textit{neuralnetworksanddeeplearning.com} on the basics of neural networks, neural network architectures, the back-propagation algorithm, optimizing hyper-parameters, regularization methods and improving performance of neural networks, gradient instability in deep neural networks, and basics of CNNs.}\\[+7mm]
+     
+     \hspace{-7mm}{\fontsize{20}{22}\selectfont Woebot - Congnitive Behavioural Therapy Chatbot}\\[-9mm]
+     \paragraph{}{\fontsize{15}{18}\selectfont Members chatting with woebot, a chatbot made by Stanford researchers which provides supplementary therapy using Cognitive Behavioural Therapy techniques, available on Facebook Messenger. Aim is to obtain maximum responses from Woebot to learn about its tree structure, which will aid in building a tree structure for the project chatbot (virtual human).}
+     
+     
+     \newpage
+     
+     \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{light_blue_background.jpg}};
+     
+     \hspace{-4.8cm}
+     \setlength{\headsep}{0pt}
+     \setlength{\voffset}{-1.5inch}
+     \setlength{\headheight}{0pt}
+     \setlength{\topmargin}{0pt}
+     \begin{tikzpicture}
+     \useasboundingbox [fill=azure] (0cm,3.5cm) rectangle (22cm,10cm);
+     \node[right] at (3.2cm,5cm) {\color{azuremist}\fontsize{35}{40}\raleway\selectfont Week 3};
+     \end{tikzpicture}\\[+2cm]
+     
+     \setlength{\baselineskip}{+8mm}
+     
+     \hspace{-7mm}{\fontsize{20}{22}\selectfont Cognitive Behavioural Therapy}\\[-9mm]
+     \paragraph{}{\fontsize{15}{18}\selectfont Obtained and studied several transcripts of conversations between patients and therapists practicing Cognitive Behavioural Therapy in therapy sessions, along with a book on the basics of Cognitive Behavioural Therapy, in order to study common methods employed by psychologists to finalise the tree structure.}\\[+7mm]
+     
+     \hspace{-7mm}{\fontsize{20}{22}\selectfont USC ICT Virtual Human Toolkit}\\[-9mm]
+     \paragraph{}{\fontsize{15}{18}\selectfont Downloaded and installed the USC ICT Virtual Human Toolkit. Learned from tutorials on the VH Toolkit including the VH Builder tutorial, Character Customization tutorial and reading documentation on the toolkit.}
+     
+     \newpage
+     
+     \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{light_blue_background.jpg}};
+     
+     \hspace{-4.8cm}
+     \setlength{\headsep}{0pt}
+     \setlength{\voffset}{-1.5inch}
+     \setlength{\headheight}{0pt}
+     \setlength{\topmargin}{0pt}
+     \begin{tikzpicture}
+     \useasboundingbox [fill=azure] (0cm,3.5cm) rectangle (22cm,10cm);
+     \node[right] at (3.2cm,5cm) {\color{azuremist}\fontsize{35}{40}\raleway\selectfont Week 4};
+     \end{tikzpicture}\\[+2cm]
+     
+     \setlength{\baselineskip}{+8mm}
+     
+     \hspace{-7mm}{\fontsize{20}{22}\selectfont Tree Structure}\\[-9mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont Created tree structure of questions to be asked and responses given by the chatbot, according to the result obtained after applying sentiment analysis to the user's answer.}\\[-8mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont Merged and integrated the concepts of Cognitive Behavioural Therapy,  as learned from various online resources and books, to the tree structure.}\\[-8mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont Obtained specific psychological advice from online and offline sources for specific cases of depression. Integrated these cases as a separate branch of the tree for tackling slightly different cases of depression.}
+     
+     \newpage
+     
+     \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{light_blue_background.jpg}};
+     
+     \hspace{-4.8cm}
+     \setlength{\headsep}{0pt}
+     \setlength{\voffset}{-1.5inch}
+     \setlength{\headheight}{0pt}
+     \setlength{\topmargin}{0pt}
+     \begin{tikzpicture}
+     \useasboundingbox [fill=azure] (0cm,3.5cm) rectangle (22cm,10cm);
+     \node[right] at (3.2cm,5cm) {\color{azuremist}\fontsize{35}{40}\raleway\selectfont Week 5};
+     \end{tikzpicture}\\[+2cm]
+     
+     \setlength{\baselineskip}{+8mm}
+     
+     \hspace{-7mm}{\fontsize{20}{22}\selectfont Sentiment Analysis}\\[-9mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont Obtained datasets from Kaggle, Twitter, Stanford Sentiment Treebank and sampled them for identifying those with more relevant and accurate information.}\\[-8mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont Preprocessed the Twitter dataset, containing 1600000 tweets classified as positive and negative, initialized a vocabulary using Gensim Dictionary and replaced words with positions in the vocabulary. Limited each tweet to 20 words and split them if they exceed the limit.}\\[-8mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont Coded the model in python using the libraries Tensorflow, Keras, and Gensim. Initialised a word embedding and implemented an LSTM in the neural network model for identifying context in the tweet in accurately classifying into positive or negative.}
+     
+     \newpage
+     
+     \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{light_blue_background.jpg}};
+     
+     \hspace{-4.8cm}
+     \setlength{\headsep}{0pt}
+     \setlength{\voffset}{-1.5inch}
+     \setlength{\headheight}{0pt}
+     \setlength{\topmargin}{0pt}
+     \begin{tikzpicture}
+     \useasboundingbox [fill=azure] (0cm,3.5cm) rectangle (22cm,10cm);
+     \node[right] at (3.2cm,5cm) {\color{azuremist}\fontsize{35}{40}\raleway\selectfont Week 6};
+     \end{tikzpicture}\\[+2cm]
+     
+     \setlength{\baselineskip}{+8mm}
+     
+     \hspace{-7mm}{\fontsize{20}{22}\selectfont Depression Therapy Chatbot}\\[-9mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont Created the chatbot python file and implemented the tree structure in python. Integrated sentiment analysis in the chatbot functioning, with thresholds for classification into leaf nodes tweaked for high accuracy.}\\[-8mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont Experimented with the model architecture and two different methods of implementation. Fine-tuned the parameters for the sentiment analysis model for optimum balance between performance and accuracy.}\\[-10mm]
+     
+     \paragraph{}{\fontsize{15}{18}\selectfont Debugging, testing and documentation of the chatbot.}
+     
+\end{document}

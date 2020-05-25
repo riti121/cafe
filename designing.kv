@@ -1,0 +1,36 @@
+WindowManager:
+    Home:
+<Home>:
+    labelvalue: labelvalue
+    first:first
+    name: 'home' 
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: labelvalue
+            text: " Welcome to Cafe Buddy"
+            text_size: root.width, None
+            halign: 'center'
+        Button:
+            size: self.texture_size
+            text_size: root.width, None
+            background_color: 0,0,0,0
+            id: first
+            size_hint: 1,0.2
+            halign: 'center'
+            text: " Animate "
+            on_release: 
+                root.animation_begins()
+                #app.root.current = "quest"
+                #root.manager.transition.direction = "left" 
+        
+        Button:
+            size: self.texture_size
+            text_size: root.width, None
+            id: second
+            size_hint: 1,0.2
+            halign: 'center'
+            text: " Chat with Smart Cousellor "
+            on_release: 
+                app.root.current = "camera"
+                root.manager.ransition.direction = "left" 

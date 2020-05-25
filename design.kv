@@ -1,0 +1,335 @@
+WindowManager:
+    Home:
+    Questions:
+    Description:
+    CareerOptions:
+    Strengths:
+    Report:
+    ChatWindow:
+
+<Home>:
+    first:first
+    name: 'home' 
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: " Welcome to Cafe Buddy"
+            text_size: root.width, None
+            halign: 'center'
+        Button:
+            size: self.texture_size
+            text_size: root.width, None
+            id: first
+            size_hint: 1,0.2
+            halign: 'center'
+            text: " Explore your personality "
+            on_release: 
+                app.root.current = "quest"
+                root.manager.transition.direction = "left" 
+        
+        Button:
+            size: self.texture_size
+            text_size: root.width, None
+            id: second
+            size_hint: 1,0.2
+            halign: 'center'
+            text: " Chat with Smart Cousellor "
+            on_release: 
+                app.root.current = "camera"
+                root.manager.transition.direction = "left" 
+            
+
+
+<Questions>:
+
+    question_1: question_1
+    question_2: question_2
+    name: 'questions'
+    GridLayout:
+        cols:1 
+        Label:
+            id: per
+            text: " Choose the one that suits you the best!"
+            halign : 'center'
+            size: self.texture_size
+            text_size: root.width, None
+        Button: 
+            id: question_1
+            text: "1. a. expend energy, enjoy groups"
+            size: self.texture_size
+            text_size: root.width, None
+            halign: 'center'
+            on_release:
+                root.ask_question1()
+        Button:
+            id: question_2
+            size: self.texture_size
+            text_size: root.width, None
+            halign: 'center'
+            text: "b. conserve energy, enjoy one-on-one"
+            on_release: 
+                root.ask_question2()
+
+<Description>:
+    persona:persona
+    detail:detail
+    name: 'description' 
+    BoxLayout:
+        orientation: 'vertical'
+        
+        Label:
+            id: persona
+            text: ""
+            size_hint:1,0.2
+        
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            Label:
+                size_hint_y:None
+                height: self.texture_size[1]
+                text_size : self.width, None
+                padding: 10,10
+                id: detail
+                text: ""
+
+        GridLayout:
+            size_hint:1,0.1
+            cols:2
+            Button:
+                text: "Back"
+                size: self.texture_size
+                text_size: root.width, None
+                halign: 'center'
+                on_release: 
+                    app.root.current = "rep"
+                    root.manager.transition.direction = "left"
+            Button:
+                text: "HomePage"
+                size: self.texture_size
+                text_size: root.width, None
+                halign: 'center'
+                on_release: 
+                    app.root.current = "home"
+                    root.manager.transition.direction = "left"  
+
+
+<CareerOptions>:
+    persona:persona
+    detail:detail
+    name: 'career' 
+    BoxLayout:
+        orientation: 'vertical'
+        
+        Label:
+            id: persona
+            text: ""
+            size_hint:1,0.2
+
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size : self.width, None
+                padding: 10,10
+                id: detail
+                text: ""
+        
+        GridLayout:
+            size_hint:1,0.1
+            cols:2
+            Button:
+                size: self.texture_size
+                text_size: root.width, None
+                text: "Back"
+                halign: 'center'
+                on_release: 
+                    app.root.current = "rep"
+                    root.manager.transition.direction = "left"
+            Button:
+                size: self.texture_size
+                text_size: root.width, None
+                text: "HomePage"
+                halign: 'center'
+                on_release: 
+                    app.root.current = "home"
+                    root.manager.transition.direction = "left" 
+              
+
+<Strengths>:
+    persona:persona
+    detail:detail
+    name: 'strengths' 
+    BoxLayout:
+        orientation: 'vertical'
+        
+        Label:
+            id: persona
+            text: ""
+            size_hint:1,0.2
+        
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            Label:
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size : self.width, None
+                padding: 10,10
+                id: detail
+                text: ""
+
+        GridLayout:
+            size_hint:1,0.1
+            cols:2
+            Button:
+                size: self.texture_size
+                text_size: root.width, None
+                text: "Back"
+                halign: 'center'
+                on_release: 
+                    app.root.current = "rep"
+                    root.manager.transition.direction = "left"
+            Button:
+                size: self.texture_size
+                text_size: root.width, None
+                text: "HomePage"
+                halign: 'center'
+                on_release: 
+                    app.root.current = "home"
+                    root.manager.transition.direction = "left" 
+
+
+<Report>:
+    per:per
+    image:img
+    name: 'report' 
+    GridLayout:
+        cols:1
+        GridLayout:
+            cols:1
+            Image:
+                id:img
+                size:self.texture_size
+                width: root.width
+                source:''
+            Label:
+                id: per
+                text: " "
+                halign : 'center'
+                size: self.texture_size
+                text_size: root.width, None
+            
+        GridLayout:
+            cols:1
+            Button:
+                size: self.texture_size
+                text_size: root.width, None
+                text: "Detailed Description"
+                halign: 'center'
+                on_release: 
+                    app.root.current = 'description' 
+                    root.manager.transition.direction = "right" 
+            Button:
+                size: self.texture_size
+                text_size: root.width, None
+                text: "Career Option"
+                halign: 'center'
+                on_release: 
+                    app.root.current = "career"
+                    root.manager.transition.direction = "right" 
+            Button:
+                size: self.texture_size
+                text_size: root.width, None
+                text: "Strengths"
+                halign: 'center'
+                on_release: 
+                    app.root.current = "strengths"
+                    root.manager.transition.direction = "right"
+            Button:
+                size: self.texture_size
+                text_size: root.width, None
+                text: "Get Back To HomePage"
+                halign: 'center'
+                on_release: 
+                    app.root.current = 'home' 
+                    root.manager.transition.direction = "right" 
+
+<CameraClick>:
+
+    textforcamera:textforcamera
+
+    BoxLayout: 
+        orientation: 'vertical'
+        Label:
+            id: cameralabel
+            text: "Hey, My name is Cafe Buddy \n  let's get your snap first!!"
+            halign : 'center'
+            size: self.texture_size
+            text_size: root.width, None
+            size_hint: 1,0.2
+        Camera:
+            id: camera
+            resolution: (640, 480)
+            play: True
+        Label:
+            id: namelabel
+            text: "And with what name might i call you!!"
+            halign : 'center'
+            size: self.texture_size
+            size_hint: 1,0.2
+            text_size: root.width, None
+
+        TextInput:
+            id: textforcamera
+            text: " "
+            width: root.size[0]*0.8
+            size_hint: 1,0.2
+            multiline: False
+
+        Button:
+            text: 'Proceed'
+            size_hint: 1,0.2
+            height: '48dp'
+            #on_press: root.capture()
+            on_release:
+                app.root.current='chat'
+                root.capture()
+
+<ChatWindow>:
+    text:text
+    chat_history: chat_history
+    name: 'chat' 
+    GridLayout:
+        cols:1
+        rows:2
+        Label:
+            id: chat_history
+            height : root.size[1]*0.9
+            size_hint_y : None
+            text_size: root.width, None
+        GridLayout:
+            cols:2
+            TextInput:
+                id: text
+                text: "Enter your reply here"
+                width: root.size[0]*0.8
+                size_hint_x : None
+                multiline: False
+            GridLayout:
+                rows:2
+                Button:
+                    text: "Send"
+                    on_release: 
+                        root.send_message()
+                Button:
+                    text: "Go Back"
+                    on_release:
+                        app.root.current = "home"
+
+
+
+
+
